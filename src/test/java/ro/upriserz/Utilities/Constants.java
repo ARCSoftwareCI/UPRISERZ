@@ -11,7 +11,7 @@ public class Constants {
 
     public static final String CASIAN_PASSWORD = "Rapid1923!";
 
-    public static final String RANDOM_EMAIL = RandomStringUtils.randomAlphabetic(8)+"@"+RandomStringUtils.randomAlphabetic(5)+".com";
+    public static final String RANDOM_EMAIL = RandomStringUtils.randomAlphabetic(8) + "@" + RandomStringUtils.randomAlphabetic(5) + ".com";
 
     public static final String RANDOM_PASSWORD = RandomStringUtils.randomAlphabetic(7);
 
@@ -23,14 +23,11 @@ public class Constants {
 
     public static final String USER_LAST = "Csete";
 
-    public static final String USER_PHONE = "";
+    public static final String RANDOM_FISRT_NAME = RandomStringUtils.randomAlphabetic(7);
 
-    public static final String USER_POSTCODE = "";
+    public static final String RANDOM_LAST_NAME = RandomStringUtils.randomAlphabetic(7);
 
-    public static final String USER_CITY = "Cluj-Napoca";
+    public static final String RANDOM_PHONE_NUMBER = RandomStringUtils.randomNumeric(8);
 
-    public static final String USER_ADDRESS = "Strada Panselutelor Numarul 43";
-
-    public static final String USER_NAME = "Robert Csete";
 
 }

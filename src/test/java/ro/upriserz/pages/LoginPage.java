@@ -26,9 +26,10 @@ public class LoginPage extends BasePage{
     private WebElementFacade forgotPassword;
 
     @FindBy (css = ".bg-white div:first-of-type .text-red-500")
-    private WebElementFacade wrongEmail;
+    private WebElementFacade necesaryEmail;
+
     @FindBy (css = ".mt-6 .text-red-500")
-    private WebElementFacade wrongPassword;
+    private WebElementFacade necesaryPassword;
 
     @FindBy (css = "sc-1q9fwvy-0 gHHEeh")
     private WebElementFacade helpButton;
@@ -40,7 +41,7 @@ public class LoginPage extends BasePage{
 
 
 
-    public void clickOnNewAccount(){
+    public void clickNewAccount(){
         clickOn(newAccountLink);
     }
 
@@ -58,15 +59,21 @@ public class LoginPage extends BasePage{
         clickOn(checkBoxLogin);
     }
 
-    public void clickOnForgotPassword(){
+    public void clickForgotPassword(){
         clickOn(forgotPassword);
     }
 
-    public void getWrongEmailText(){
-        wrongEmail.getText();
+    public void wrongEmailText(){
+        necesaryEmail.shouldContainOnlyText("Nu există un cont cu această adresă de e-mail. Te rugăm să ne contactezi pentru mai multe detalii.");
     }
-    public void getWrongPasswordText(){
-        wrongPassword.getText();
+    public void emptyEmailText(){
+        necesaryEmail.shouldContainOnlyText("Câmpul `Adresa de e-mail` este obligatoriu.");
+    }
+    public void emptyPasswordText(){
+        necesaryPassword.shouldContainOnlyText("Câmpul `Parolă` este obligatoriu.");
+    }
+    public void wrongPasswordText(){
+        necesaryEmail.shouldContainOnlyText("Datele de identificare nu pot fi confirmate.");
     }
 
     public void clickHelpButton(){

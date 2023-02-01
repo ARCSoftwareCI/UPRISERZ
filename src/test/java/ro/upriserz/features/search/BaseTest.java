@@ -12,6 +12,7 @@ import ro.upriserz.pages.HomePage;
 import ro.upriserz.steps.serenity.ForgottenPasswordSteps;
 import ro.upriserz.steps.serenity.HomePageSteps;
 import ro.upriserz.steps.serenity.LoginSteps;
+import ro.upriserz.steps.serenity.RegisterSteps;
 
 @RunWith(SerenityRunner.class)
 public class BaseTest {
@@ -25,7 +26,8 @@ public class BaseTest {
     protected HomePageSteps homePageSteps;
     @Steps
     protected ForgottenPasswordSteps forgottenPasswordSteps;
-
+    @Steps
+    protected RegisterSteps registerSteps;
 
     @Before
     public void maximize(){

@@ -37,7 +37,43 @@ public class LoginSteps extends BaseSteps {
 
     @Step
     public void clickOnForgotPassword(){
-        loginPage.clickOnForgotPassword();
+        loginPage.clickForgotPassword();
+    }
+
+    @Step
+    public void clickOnNewAccountLink(){
+        loginPage.clickNewAccount();
+    }
+
+    @Step
+    public void clickRemeberMeCheckBox(){
+        loginPage.clickCheckBox();
+    }
+
+    @Step
+    public void verifyWrongEmailText(){
+        loginPage.wrongEmailText();
+    }
+
+    @Step
+    public void verifyWrongPasswordText(){
+        loginPage.wrongPasswordText();
+    }
+
+    @Step
+    public void verifyEmptyFieldsLoginText(){
+        loginPage.emptyPasswordText();
+        loginPage.emptyEmailText();
+    }
+
+    @Step
+    public void verifyEmptyPasswordFieldText(){
+        loginPage.emptyPasswordText();
+    }
+
+    @Step
+    public void verifyEmptyEmailFieldText(){
+        loginPage.emptyEmailText();
     }
 
 
