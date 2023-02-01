@@ -3,6 +3,7 @@ package ro.upriserz.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.yecht.Data;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class RegisterPage extends BasePage{
     @FindBy (css = ".text-gray-700.mt-8")
     private WebElementFacade registerPageText;
 
-    public void clockHomeButtonFromRegisterPage(){
+    public void clickHomeButtonFromRegisterPage(){
         clickOn(homeButtonFromRegisterPage);
     }
 
@@ -82,20 +83,22 @@ public class RegisterPage extends BasePage{
         typeInto(lastNameField, lastName);
     }
 
+    public void completeEmailField(String email){
+        typeInto(emailField, email);
+    }
     public void selectCountry(){
         countrySelector.get(5);
     }
 
-    public void completePhoneNumber(String phoneNumber){
-        typeInto(phoneNumberField, phoneNumber);
+    public double completePhoneNumber(double phonrNumber){
+        return phonrNumber;
     }
 
-    String password= RandomStringUtils.randomAlphabetic(5)+RandomStringUtils.randomNumeric(3);
-    public void completePasswordField(){
+    public void completePasswordField(String password){
         typeInto(passwordField, password);
     }
-    public void completeConfirmPasswordField(){
-        typeInto(confirmPasswordField, password);
+    public void completeConfirmPasswordField(String confirmPassword){
+        typeInto(confirmPasswordField, confirmPassword);
     }
 
     public void clickTermsCheckBox(){
