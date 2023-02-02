@@ -1,6 +1,7 @@
 package ro.upriserz.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.WebElement;
 import ro.upriserz.pages.HomePage;
 import ro.upriserz.pages.LoginPage;
 
@@ -46,7 +47,7 @@ public class LoginSteps extends BaseSteps {
     }
 
     @Step
-    public void clickRemeberMeCheckBox(){
+    public void clickRememberMeCheckBox(){
         loginPage.clickCheckBox();
     }
 
@@ -61,12 +62,6 @@ public class LoginSteps extends BaseSteps {
     }
 
     @Step
-    public void verifyEmptyFieldsLoginText(){
-        loginPage.emptyPasswordText();
-        loginPage.emptyEmailText();
-    }
-
-    @Step
     public void verifyEmptyPasswordFieldText(){
         loginPage.emptyPasswordText();
     }
@@ -75,6 +70,28 @@ public class LoginSteps extends BaseSteps {
     public void verifyEmptyEmailFieldText(){
         loginPage.emptyEmailText();
     }
+
+    @Step
+    public void verifyEmptyFieldsLoginText(){
+        loginPage.emptyPasswordText();
+        loginPage.emptyEmailText();
+    }
+
+    @Step
+    public void isCheckboxChecked(){
+        goToLogin();
+        loginPage.clickCheckBox();
+        loginPage.clickLoginButton();
+        loginPage.isCheckBoxDisplayed();
+
+    }
+
+    @Step
+    public void loginVerifycation(String userName){
+        loginPage.verifyDashboardPage(userName);
+    }
+
+
 
 
 

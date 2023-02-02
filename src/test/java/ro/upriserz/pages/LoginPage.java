@@ -2,7 +2,6 @@ package ro.upriserz.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.yecht.Data;
 
 public class LoginPage extends BasePage{
 
@@ -26,10 +25,10 @@ public class LoginPage extends BasePage{
     private WebElementFacade forgotPassword;
 
     @FindBy (css = ".bg-white div:first-of-type .text-red-500")
-    private WebElementFacade necesaryEmail;
+    private WebElementFacade necessaryEmail;
 
     @FindBy (css = ".mt-6 .text-red-500")
-    private WebElementFacade necesaryPassword;
+    private WebElementFacade necessaryPassword;
 
     @FindBy (css = "sc-1q9fwvy-0 gHHEeh")
     private WebElementFacade helpButton;
@@ -64,22 +63,29 @@ public class LoginPage extends BasePage{
     }
 
     public void wrongEmailText(){
-        necesaryEmail.shouldContainOnlyText("Nu există un cont cu această adresă de e-mail. Te rugăm să ne contactezi pentru mai multe detalii.");
+        necessaryEmail.shouldContainOnlyText("Nu există un cont cu această adresă de e-mail. Te rugăm să ne contactezi pentru mai multe detalii.");
     }
     public void emptyEmailText(){
-        necesaryEmail.shouldContainOnlyText("Câmpul `Adresa de e-mail` este obligatoriu.");
+        necessaryEmail.shouldContainOnlyText("Câmpul `Adresa de e-mail` este obligatoriu.");
     }
     public void emptyPasswordText(){
-        necesaryPassword.shouldContainOnlyText("Câmpul `Parolă` este obligatoriu.");
+        necessaryPassword.shouldContainOnlyText("Câmpul `Parolă` este obligatoriu.");
     }
     public void wrongPasswordText(){
-        necesaryEmail.shouldContainOnlyText("Datele de identificare nu pot fi confirmate.");
+        necessaryEmail.shouldContainOnlyText("Datele de identificare nu pot fi confirmate.");
     }
 
     public void clickHelpButton(){
         clickOn(helpButton);
     }
 
+    public boolean isCheckBoxDisplayed(){
+        if(checkBoxLogin.isSelected()){
+            return true;
+        }
+
+        return false;
+    }
 
 
 

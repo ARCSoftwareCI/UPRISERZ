@@ -3,20 +3,20 @@ package ro.upriserz.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
-
+import ro.upriserz.Utilities.Constants;
 
 
 public class BasePage extends PageObject {
 
     @FindBy(css = ".text-center.px-5 .font-black")
-    private WebElementFacade homeTextOne;
+    private WebElementFacade homePageTextOne;
     @FindBy (css = ".text-center.px-5 .font-light.text-3xl")
-    private WebElementFacade homeTextTwo;
+    private WebElementFacade homePageTextTwo;
 
 
     public void verifyHomePageText(){
-        homeTextOne.shouldContainOnlyText("Apasă accelerația");
-        homeTextTwo.shouldContainOnlyText("în afacerea sau cariera ta");
+        homePageTextOne.shouldContainOnlyText("Apasă accelerația");
+        homePageTextTwo.shouldContainOnlyText("în afacerea sau cariera ta");
     }
 
     @FindBy(css = ".mt-6.text-center ")
@@ -33,6 +33,21 @@ public class BasePage extends PageObject {
         forgottenPasswordPageText.shouldContainOnlyText("Resetează parola");
     }
 
+
+    @FindBy (css = ".text-gray-700.mt-8")
+    private WebElementFacade registerPageText;
+
+    public void verifyRegisterPageText(){
+        registerPageText.shouldContainOnlyText("Ai deja un cont? Autentifică-te");
+    }
+
+    @FindBy (css = ".font-bold.mb-12.mt-8")
+    private WebElementFacade dashboardHomePage;
+
+    public void verifyDashboardPage(String userName){
+        dashboardHomePage.shouldContainOnlyText("Bine ai venit, "+ userName +"! Ești gata pentru următoarea lecție?");
+
+    }
 
 
 }

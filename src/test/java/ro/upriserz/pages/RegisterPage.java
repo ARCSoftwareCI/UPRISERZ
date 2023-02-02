@@ -64,8 +64,6 @@ public class RegisterPage extends BasePage{
     @FindBy (css = "form >p")
     private WebElementFacade checkBoxNecessaryText;
 
-    @FindBy (css = ".text-gray-700.mt-8")
-    private WebElementFacade registerPageText;
 
     public void clickHomeButtonFromRegisterPage(){
         clickOn(homeButtonFromRegisterPage);
@@ -141,9 +139,7 @@ public class RegisterPage extends BasePage{
         checkBoxNecessaryText.shouldContainOnlyText("Câmpul `Politica de Confidențialitate și Termenii și Condițiile` este obligatoriu.");
     }
 
-    public void verifyRegisterPageText(){
-        registerPageText.shouldContainOnlyText("Ai deja un cont? Autentifică-te");
-    }
+
 
 
 }
