@@ -8,11 +8,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import ro.upriserz.pages.HomePage;
 import ro.upriserz.steps.serenity.ForgottenPasswordSteps;
 import ro.upriserz.steps.serenity.HomePageSteps;
 import ro.upriserz.steps.serenity.LoginSteps;
-import ro.upriserz.steps.serenity.RegisterSteps;
+import ro.upriserz.steps.serenity.RegisterPageSteps;
 
 @RunWith(SerenityRunner.class)
 public class BaseTest {
@@ -27,7 +26,7 @@ public class BaseTest {
     @Steps
     protected ForgottenPasswordSteps forgottenPasswordSteps;
     @Steps
-    protected RegisterSteps registerSteps;
+    protected RegisterPageSteps registerSteps;
 
     @Before
     public void maximize(){

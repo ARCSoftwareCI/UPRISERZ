@@ -10,8 +10,6 @@ import java.util.List;
 public class RegisterPage extends BasePage{
 
 
-    @FindBy(css = ".flex-shrink-0.flex ")
-    private WebElementFacade homeButtonFromRegisterPage;
 
     @FindBy (css = ".hidden .inline-block")
     private WebElementFacade loginButtonFromTop;
@@ -65,9 +63,6 @@ public class RegisterPage extends BasePage{
     private WebElementFacade checkBoxNecessaryText;
 
 
-    public void clickHomeButtonFromRegisterPage(){
-        clickOn(homeButtonFromRegisterPage);
-    }
 
     public void clickLoginButtonFromTop(){
         clickOn(loginButtonFromTop);

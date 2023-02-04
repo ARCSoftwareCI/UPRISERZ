@@ -26,6 +26,27 @@ public class ForgottenPasswordTest extends BaseTest{
         forgottenPasswordSteps.doForgotYourPasswordCompleteWithWrongEmail(Constants.RANDOM_EMAIL);
     }
 
+    @Test
+    public void forgottenPasswordWithCorrectEmail(){
+        loginSteps.goToLogin();
+        loginSteps.clickOnForgotPassword();
+        forgottenPasswordSteps.doForgotYourPasswordCompleteWithCorrectEmail(Constants.USER_EMAIL);
+    }
+
+    @Test
+    public void verifyHomeButton(){
+        loginSteps.goToLogin();
+        loginSteps.clickOnForgotPassword();
+        forgottenPasswordSteps.verifyHomeButtonFromForgottenPasswordPage();
+    }
+
+    @Test
+    public void verifyBackToLoginButton(){
+        loginSteps.goToLogin();
+        loginSteps.clickOnForgotPassword();
+        forgottenPasswordSteps.verifyBackToLoginButtonFromForgottenPasswordPage();
+    }
+
 
 
 }

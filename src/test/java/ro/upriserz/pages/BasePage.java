@@ -19,7 +19,7 @@ public class BasePage extends PageObject {
         homePageTextTwo.shouldContainOnlyText("în afacerea sau cariera ta");
     }
 
-    @FindBy(css = ".mt-6.text-center ")
+    @FindBy(css = ".mt-6.text-center")
     private WebElementFacade  loginPageText;
 
     public void verificationLoginPageText(){
@@ -47,6 +47,13 @@ public class BasePage extends PageObject {
     public void verifyDashboardPage(String userName){
         dashboardHomePage.shouldContainOnlyText("Bine ai venit, "+ userName +"! Ești gata pentru următoarea lecție?");
 
+    }
+
+    @FindBy (css = ".hidden.w-auto")
+    private WebElementFacade homeButtonFromRegisterPage;
+
+    public void clickHomeButtonFromRegisterPage(){
+        clickOn(homeButtonFromRegisterPage);
     }
 
 

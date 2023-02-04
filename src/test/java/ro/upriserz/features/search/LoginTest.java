@@ -31,7 +31,24 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void loginWIthWrongEmail(){
+    public void loginWithEmptyEmailField() {
+        loginSteps.goToLogin();
+        loginSteps.completePasswordField(RandomStringUtils.randomAlphabetic(8));
+        loginSteps.clickOnLoginButton();
+        loginSteps.verifyEmptyEmailFieldText();
+    }
+
+    @Test
+    public void loginWithEmptyPasswordField() {
+        loginSteps.goToLogin();
+        loginSteps.completeEmailField(Constants.USER_EMAIL);
+        loginSteps.clickOnLoginButton();
+        loginSteps.verifyEmptyPasswordFieldText();
+    }
+
+
+    @Test
+    public void loginWithWrongEmail(){
         loginSteps.goToLogin();
         loginSteps.completeEmailField("emailtest@test.com");
         loginSteps.completePasswordField(RandomStringUtils.randomAlphabetic(8));

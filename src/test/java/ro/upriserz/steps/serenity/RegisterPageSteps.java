@@ -1,14 +1,12 @@
 package ro.upriserz.steps.serenity;
 
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
+
 import net.thucydides.core.annotations.Step;
-import org.yecht.Data;
 import ro.upriserz.pages.HomePage;
 import ro.upriserz.pages.LoginPage;
 import ro.upriserz.pages.RegisterPage;
 
-public class RegisterSteps extends BaseSteps{
+public class RegisterPageSteps extends BaseSteps{
     private RegisterPage registerPage;
     private HomePage homePage;
     private LoginPage loginPage;
@@ -27,6 +25,7 @@ public class RegisterSteps extends BaseSteps{
     public void clickOnLoginButtonFromBottom(){
         registerPage.clickLoginButtonFromBottom();
     }
+
 
     @Step
     public void completeTheFirstNameField(String firstName){

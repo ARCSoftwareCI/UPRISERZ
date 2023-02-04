@@ -3,7 +3,7 @@ package ro.upriserz.features.search;
 import org.junit.Test;
 import ro.upriserz.Utilities.Constants;
 
-public class RegisterTest extends BaseTest{
+public class RegisterPageTest extends BaseTest{
 
 //    @Test
 //    public void registerWithEmptyFields(){

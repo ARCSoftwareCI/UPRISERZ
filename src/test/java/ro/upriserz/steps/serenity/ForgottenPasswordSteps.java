@@ -2,10 +2,12 @@ package ro.upriserz.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
 import ro.upriserz.pages.ForgottenPasswordPage;
+import ro.upriserz.pages.HomePage;
 
 public class ForgottenPasswordSteps extends BaseSteps{
     private ForgottenPasswordPage forgottenPassword;
     private LoginSteps loginSteps;
+    private HomePage homePage;
 
 
     @Step
@@ -57,12 +59,25 @@ public class ForgottenPasswordSteps extends BaseSteps{
     }
 
     @Step
-    public void doForgotYourPasswordCompleteWithEmail(String email){
+    public void doForgotYourPasswordCompleteWithCorrectEmail(String email){
         completeEmailFieldForgottenPassword(email);
         clickOnSendLinkForPassword();
         verifyEmailForCompleteForgotPassword();
-
     }
+
+    @Step
+    public void verifyHomeButtonFromForgottenPasswordPage(){
+        clickOnHomeButtonFromForgottenPasswordPage();
+        homePage.verifyHomePageText();
+    }
+
+    @Step
+    public void verifyBackToLoginButtonFromForgottenPasswordPage(){
+        clickOnBackToLoginPage();
+        loginSteps.verifyLoginPageText();
+    }
+
+
 
 
 }
