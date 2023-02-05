@@ -1,7 +1,6 @@
 package ro.upriserz.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.WebElement;
 import ro.upriserz.pages.HomePage;
 import ro.upriserz.pages.LoginPage;
 
@@ -80,14 +79,14 @@ public class LoginSteps extends BaseSteps {
     @Step
     public void isCheckboxChecked(){
         goToLogin();
-        loginPage.clickCheckBox();
+        clickRememberMeCheckBox();
         loginPage.clickLoginButton();
         loginPage.isCheckBoxDisplayed();
 
     }
 
     @Step
-    public void loginVerifycation(String userName){
+    public void loginVerification(String userName){
         loginPage.verifyDashboardPage(userName);
     }
 

@@ -1,5 +1,6 @@
 package ro.upriserz.features.search;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import ro.upriserz.Utilities.Constants;
 
@@ -21,7 +22,14 @@ public class RegisterPageTest extends BaseTest{
     public void registerWithEmptyEmail(){
         loginSteps.goToLogin();
         loginSteps.clickOnNewAccountLink();
-        registerSteps.doRegisterWithEmptyEmailField("password1", "password1",Constants.RANDOM_FISRT_NAME,Constants.RANDOM_LAST_NAME,78945612);
+        registerSteps.doRegisterWithEmptyEmailField("password1", "password1",Constants.RANDOM_FISRT_NAME,Constants.RANDOM_LAST_NAME,Constants.PHONE_NUMBER);
+    }
+
+    @Test
+    public void registerWithWrongPasswordName(){
+        registerSteps.goToRegisterPage();
+        registerSteps.doRegisterWithWrongPassword("test","test","emailtest@test.com","pass","password8",Constants.PHONE_NUMBER);
+        registerSteps.ver
     }
 
     @Test
@@ -43,6 +51,18 @@ public class RegisterPageTest extends BaseTest{
         loginSteps.goToLogin();
         loginSteps.clickOnNewAccountLink();
         registerSteps.verifyLoginButtonFromBottom();
+    }
+
+    @Test
+    public void verifyTermsCheckBox(){
+        registerSteps.goToRegisterPage();
+        registerSteps.isTermsCheckBoxDisplayed();
+    }
+
+    @Test
+    public void verifyEmptyFieldRegisterPage(){
+        registerSteps.goToRegisterPage();
+        registerSteps.doRegisterWithEmptyFields();
     }
 
 

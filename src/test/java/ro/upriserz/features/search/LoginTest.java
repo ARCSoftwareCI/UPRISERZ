@@ -20,7 +20,7 @@ public class LoginTest extends BaseTest {
     public void loginWithValidCredentials(){
         loginSteps.goToLogin();
         loginSteps.doCompleteLogin(Constants.USER_EMAIL, Constants.USER_PASSWORD);
-        loginSteps.loginVerifycation(Constants.USER_COMPLETE_NAME);
+        loginSteps.loginVerification(Constants.USER_COMPLETE_NAME);
     }
 
     @Test

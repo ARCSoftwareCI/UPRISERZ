@@ -2,8 +2,6 @@ package ro.upriserz.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.yecht.Data;
 
 import java.util.List;
 
@@ -62,7 +60,13 @@ public class RegisterPage extends BasePage{
     @FindBy (css = "form >p")
     private WebElementFacade checkBoxNecessaryText;
 
+    public boolean isCheckBoxDisplayed(){
+        if(termsCheckBox.isSelected()){
+            return true;
+        }
 
+        return false;
+    }
 
     public void clickLoginButtonFromTop(){
         clickOn(loginButtonFromTop);
@@ -83,8 +87,8 @@ public class RegisterPage extends BasePage{
         countrySelector.get(5);
     }
 
-    public double completePhoneNumber(double phonrNumber){
-        return phonrNumber;
+    public double completePhoneNumber(long phoneNumber){
+        return phoneNumber;
     }
 
     public void completePasswordField(String password){
@@ -122,7 +126,7 @@ public class RegisterPage extends BasePage{
         phoneNumberNecessaryText.shouldContainOnlyText("Câmpul `Număr de telefon` nu este valid.");
     }
 
-    public void verifyEmptyPasswordFieldtext(){
+    public void verifyEmptyPasswordFieldText(){
         passwordNecessaryText.shouldContainOnlyText("Câmpul `Parolă` este obligatoriu.");
     }
 
@@ -134,6 +138,9 @@ public class RegisterPage extends BasePage{
         checkBoxNecessaryText.shouldContainOnlyText("Câmpul `Politica de Confidențialitate și Termenii și Condițiile` este obligatoriu.");
     }
 
+    public void verifyWrongEmptyConfirmPassword(){
+        passwordNecessaryText.shouldContainOnlyText("Confirmarea `Confirmă parola` nu se potrivește.");
+    }
 
 
 
