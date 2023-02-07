@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
 
     @FindBy(css = "nav div")
     private WebElementFacade loginButton;
-//    Autentifică-te
+
     @FindBy(css = "nav a svg")
     private WebElementFacade homeButton;
 
@@ -24,7 +24,7 @@ public class HomePage extends BasePage {
         clickOn(homeButton);
     }
 
-    public void cickOnCookiesButton(){
+    public void clickOnCookiesButton(){
         clickOn(cookiesButton);
     }
 

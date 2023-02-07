@@ -14,7 +14,7 @@ public class BaseSteps extends ScenarioSteps {
     @Step
     public void openHomePage(){
         homePage.open();
-        homePage.cickOnCookiesButton();
+        homePage.clickOnCookiesButton();
     }
 
     @Step
