@@ -43,7 +43,10 @@ public class BaseSteps extends ScenarioSteps {
         homePage.clickOnHomeButton();
     }
 
-
+    @Step
+    public void waitingStep(long second){
+        homePage.waiting(second);
+    }
 
 
 }

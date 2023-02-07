@@ -31,7 +31,7 @@ public class Constants {
 
     public static final String RANDOM_PHONE_NUMBER = RandomStringUtils.randomNumeric(10);
 
-    public static final long PHONE_NUMBER = 1023456789L;
+    public static final String PHONE_NUMBER = "1023456789";
 
 
 

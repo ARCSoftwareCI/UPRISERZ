@@ -43,8 +43,13 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void completeThePhoneNumberField(long phoneNumber){
+    public void completeThePhoneNumberField(String phoneNumber){
         registerPage.completePhoneNumber(phoneNumber);
+    }
+
+    @Step
+    public void isPhoneNUmberCorrect(){
+        registerPage.validPhoneNumber();
     }
 
     @Step
@@ -54,7 +59,7 @@ public class RegisterPageSteps extends BaseSteps{
 
     @Step
     public void completeTheConfirmPasswordField(String confirmPassword){
-        registerPage.completePasswordField(confirmPassword);
+        registerPage.completeConfirmPasswordField(confirmPassword);
     }
     @Step
     public void clickOnTermsCheckBox(){
@@ -68,7 +73,18 @@ public class RegisterPageSteps extends BaseSteps{
 
     @Step
     public void verifyWrongPasswordField(){
-        loginPage.wrongPasswordText();
+        registerPage.verifyWrongPasswordFieldText();
+    }
+
+    @Step
+    public void verifyEmptyTermsCheckBoxTest(){
+        registerPage.verifyEmptyCheckBoxText();
+
+    }
+
+    @Step
+    public void verifySameEmailAddressText(){
+        registerPage.verifySameEmailText();
     }
 
     @Step
@@ -80,9 +96,7 @@ public class RegisterPageSteps extends BaseSteps{
 
     @Step
     public void verifyRegisterPage(){
-        openHomePage();
-        homePage.clickOnLoginButton();
-        loginPage.clickNewAccount();
+        goToRegisterPage();
         registerPage.verifyRegisterPageText();
     }
 
@@ -98,7 +112,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithEmptyEmailField(String password, String confirmPassword, String firstName, String lastName, long phoneNumber){
+    public void doRegisterWithEmptyEmailField(String password, String confirmPassword, String firstName, String lastName, String phoneNumber){
         registerPage.completeFirstNameField(firstName);
         registerPage.completeLastNameField(lastName);
         registerPage.completePhoneNumber(phoneNumber);
@@ -111,7 +125,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithEmptyFirstNameField(String password, String confirmPassword, String email, String lastName, long phoneNumber){
+    public void doRegisterWithEmptyFirstNameField(String password, String confirmPassword, String email, String lastName, String phoneNumber){
         registerPage.completeEmailField(email);
         registerPage.completeLastNameField(lastName);
         registerPage.completePhoneNumber(phoneNumber);
@@ -124,7 +138,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithEmptyLastNameField(String password, String confirmPassword, String email, String firstName, long phoneNumber){
+    public void doRegisterWithEmptyLastNameField(String password, String confirmPassword, String email, String firstName, String phoneNumber){
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
         completeThePhoneNumberField(phoneNumber);
@@ -150,7 +164,7 @@ public class RegisterPageSteps extends BaseSteps{
 
 
     @Step
-    public void doRegisterWithEmptyPasswordField(String lastName, String confirmPassword, String email, String firstName, long phoneNumber) {
+    public void doRegisterWithEmptyPasswordField(String lastName, String confirmPassword, String email, String firstName, String phoneNumber) {
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -162,7 +176,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithEmptyConfirmPasswordField(String lastName, String password, String email, String firstName, long phoneNumber) {
+    public void doRegisterWithEmptyConfirmPasswordField(String lastName, String password, String email, String firstName, String phoneNumber) {
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -174,7 +188,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithWrongConfirmPassword(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
+    public void doRegisterWithWrongConfirmPassword(String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber){
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -187,7 +201,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithWrongPassword(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
+    public void doRegisterWithWrongPassword(String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber){
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -200,7 +214,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithWrongPhoneNumber(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
+    public void doRegisterWithWrongPhoneNumber(String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber){
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -213,7 +227,7 @@ public class RegisterPageSteps extends BaseSteps{
     }
 
     @Step
-    public void doRegisterWithWrongEmail(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
+    public void doRegisterWithWrongEmail(String firstName, String lastName, String email, String password, String confirmPassword, String phoneNumber){
         completeTheLastNameField(lastName);
         completeTheFirstNameField(firstName);
         completeTheEmailField(email);
@@ -222,34 +236,10 @@ public class RegisterPageSteps extends BaseSteps{
         completeTheConfirmPasswordField(confirmPassword);
         clickOnTermsCheckBox();
         clickRegisterButton();
-        registerPage.verifyWrongEmptyConfirmPassword();
+        registerPage.verifyWrongEmailField();
     }
 
-    @Step
-    public void doRegisterWithWrongFirstName(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
-        completeTheLastNameField(lastName);
-        completeTheFirstNameField(firstName);
-        completeTheEmailField(email);
-        completeThePhoneNumberField(phoneNumber);
-        completeThePasswordField(password);
-        completeTheConfirmPasswordField(confirmPassword);
-        clickOnTermsCheckBox();
-        clickRegisterButton();
-        registerPage.verifyWrongEmptyConfirmPassword();
-    }
 
-    @Step
-    public void doRegisterWithWrongLastName(String firstName, String lastName, String email, String password, String confirmPassword, long phoneNumber){
-        completeTheLastNameField(lastName);
-        completeTheFirstNameField(firstName);
-        completeTheEmailField(email);
-        completeThePhoneNumberField(phoneNumber);
-        completeThePasswordField(password);
-        completeTheConfirmPasswordField(confirmPassword);
-        clickOnTermsCheckBox();
-        clickRegisterButton();
-        registerPage.verifyWrongEmptyConfirmPassword();
-    }
 
     @Step
     public void verifyLoginButtonFromTop(){
@@ -274,6 +264,16 @@ public class RegisterPageSteps extends BaseSteps{
         clickOnTermsCheckBox();
         clickRegisterButton();
         registerPage.isCheckBoxDisplayed();
+    }
+
+    @Step
+    public void completeAllRegistrationFields(String firstName, String lastName,String email,String phoneNumber,String password, String confirmPassword){
+        completeTheFirstNameField(firstName);
+        completeTheLastNameField(lastName);
+        completeTheEmailField(email);
+        completeThePhoneNumberField(phoneNumber);
+        completeThePasswordField(password);
+        completeTheConfirmPasswordField(confirmPassword);
     }
 
 }

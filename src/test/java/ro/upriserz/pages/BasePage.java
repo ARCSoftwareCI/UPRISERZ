@@ -56,5 +56,7 @@ public class BasePage extends PageObject {
         clickOn(homeButtonFromRegisterPage);
     }
 
-
+    public void waiting(long second){
+        waitABit(second);
+    }
 }

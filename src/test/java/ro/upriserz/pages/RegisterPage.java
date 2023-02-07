@@ -21,11 +21,14 @@ public class RegisterPage extends BasePage{
     @FindBy (id = "email")
     private WebElementFacade emailField;
 
-    @FindBy (css = ".input-country-selector ")
+    @FindBy (id = "MazPhoneNumberInput-5_country_selector ")
     private List<WebElementFacade> countrySelector;
 
-    @FindBy (css = ".input-phone-number")
+    @FindBy (css = ".input-phone-number.has-hint")
     private WebElementFacade phoneNumberField;
+
+    @FindBy (css = ".input-phone-number.is-valid")
+    private WebElementFacade validPhoneNumberField;
 
     @FindBy (id = "password")
     private WebElementFacade passwordField;
@@ -87,8 +90,15 @@ public class RegisterPage extends BasePage{
         countrySelector.get(5);
     }
 
-    public double completePhoneNumber(long phoneNumber){
-        return phoneNumber;
+    public void completePhoneNumber(String phoneNumber){
+         typeInto(phoneNumberField, phoneNumber);
+    }
+
+    public boolean validPhoneNumber(){
+        if(validPhoneNumberField.isDisplayed()){
+            return true;
+        }
+        return false;
     }
 
     public void completePasswordField(String password){
@@ -142,6 +152,12 @@ public class RegisterPage extends BasePage{
         passwordNecessaryText.shouldContainOnlyText("Confirmarea `Confirmă parola` nu se potrivește.");
     }
 
+    public void verifyWrongEmailField(){
+        emailNecessaryText.shouldContainOnlyText("Câmpul `Adresa de e-mail` trebuie să fie o adresă de e-mail validă.");
+    }
 
+    public void verifySameEmailText(){
+        emailNecessaryText.shouldContainOnlyText("Câmpul `Adresa de e-mail` a fost deja folosit.");
+    }
 
 }
