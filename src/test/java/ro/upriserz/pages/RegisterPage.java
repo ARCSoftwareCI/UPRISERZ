@@ -24,7 +24,7 @@ public class RegisterPage extends BasePage{
     @FindBy (id = "MazPhoneNumberInput-5_country_selector ")
     private List<WebElementFacade> countrySelector;
 
-    @FindBy (css = ".input-phone-number.has-hint")
+    @FindBy (id = "MazPhoneNumberInput-9_phone_number")
     private WebElementFacade phoneNumberField;
 
     @FindBy (css = ".input-phone-number.is-valid")
